@@ -259,12 +259,16 @@ function draw() {
   }else if(animationsIndex==4)
   {
     leCircle.draw(width/2, height/2, true);
+  }else if(animationsIndex==5)
+  {
+    laWaveBackward.draw(width, height/2, true);
   }
 }
 
+
 function keyPressed() {
   if (key === ' ') {
-    animationsIndex = (animationsIndex + 1) % 5;
+    animationsIndex = (animationsIndex + 1) % 6;
   }
   if (key ==='0')
   {
@@ -275,7 +279,7 @@ function keyPressed() {
   if(key=='1')
   {
     //sub animation index
-    if(animationsIndex==2)
+    if(animationsIndex==1)
     {subAnimationsIndex+=1;}
     else if(animationsIndex==3)
     {
@@ -303,9 +307,11 @@ function mousePressed()
   {
     radius+=10;
     leCircle.setRadius(radius);
+    
   }
 
 }
+
 class Word {
   constructor(word, x, y, idx) {
       this.word = word
@@ -354,7 +360,7 @@ class textWave {
     amplitude=50,
     period = 300,
     xSpacing = 20,
-    speed = .4,
+    speed = .8,
     mode = 'forward',
     tSize = 24,
   ) {
